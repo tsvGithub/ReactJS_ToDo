@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="todo">
       <div className="todo__sidebar">
+        {/*etot List renderitsja 1 raz */}
         <List
           items={[
             {
@@ -23,6 +24,7 @@ function App() {
             },
           ]}
         />
+        {/*etot List renderitsja stoljko raz, skoljko v nem items */}
         <List
           items={[
             {

@@ -7,11 +7,17 @@ import closeSvg from "../../assets/img/close.svg";
 import "./AddList.scss";
 
 const AddList = ({ colors }) => {
+  //State: [state, setState]
+  //state = hranit true/false; setState zadajet true/false
+
+  //visiblePopup === false
+  //useState pri vyzove sebja izna4aljno peredajet FALSE
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [seletedColor, selectColor] = useState(colors[0].id);
 
   return (
     <div className="add-list">
+      {/*Nazhatj (onClick) v AddList 4toby otkrytj pole zapolnenija */}
       <List
         onClick={() => setVisiblePopup(true)}
         items={[
@@ -27,6 +33,9 @@ const AddList = ({ colors }) => {
           },
         ]}
       />
+      {/*etot blok dolzhen otobrazhatsja toljko pri visiblePopup===true
+       (ne srazu) 
+       etot kod visiblePopup && kak if...else */}
       {visiblePopup && (
         <div className="add-list__popup">
           <img

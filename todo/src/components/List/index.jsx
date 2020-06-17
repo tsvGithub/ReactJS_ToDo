@@ -9,7 +9,13 @@ const List = ({ items, isRemovable, onClick }) => {
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (
+        //className zapuskaet funkciju ClassNames iz biblioteki 'classnames' i ona
+        //soedinjaet(concat) classy v odin: item.className u nas eto 'list__add-button'
+        //i object {active: item.active} proverjaet, esli item v sostojamii active,
+        //to dobavljaet class Active
         <li key={index} className={classNames(item.className, { active: item.active })}>
+          {/*esli estj icon, ispoljzuj eje, esli net - vyzovi Badge (kruzhok) 
+          i peredaj cvet kruzhka */}
           <i>{item.icon ? item.icon : <Badge color={item.color} />}</i>
           <span>{item.name}</span>
         </li>
